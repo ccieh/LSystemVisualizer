@@ -9,7 +9,7 @@ public class SimpleRule implements Rule {
     final List<Term> targetSequence;
     final List<Term> resultSequence;
 
-    public SimpleRule(Iterable<Term> targetSequence, Iterable<Term> resultSequence) {
+    public SimpleRule(Collection<Term> targetSequence, Collection<Term> resultSequence) {
         this.resultSequence = new LinkedList<>();
         this.targetSequence = new LinkedList<>();
         targetSequence.forEach(term -> this.targetSequence.add(term.clone()));
@@ -48,7 +48,7 @@ public class SimpleRule implements Rule {
         return applicable;
     }
     @Override
-    public Iterable<Term> apply(ListIterator<Term> term) {
+    public Collection<Term> apply(ListIterator<Term> term) {
         if ( isApplicable(term) ){
             List<Term> resultList = new LinkedList<>();
             resultSequence.forEach(t -> resultList.add(t.clone()));
