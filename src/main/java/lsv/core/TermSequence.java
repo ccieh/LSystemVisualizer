@@ -11,7 +11,6 @@ public class TermSequence {
     LinkedList<Term> terms = new LinkedList<>();
     public void applyRules(Collection<Rule> rules){
         TermSequence sequence = new TermSequence();
-        int i = 0;
         ListIterator<Term> termListIterator = terms.listIterator();
         while ( termListIterator.hasNext() ){
             int cur = termListIterator.nextIndex();
@@ -29,9 +28,7 @@ public class TermSequence {
         add(terms);
     }
     public void act(){
-        for (Term term : terms) {
-            term.act();
-        }
+        terms.forEach(Term::act);
     }
 
     @Override

@@ -71,6 +71,7 @@ public class Term {
         this.parameters = (Hashtable<String, Double>) map.clone();
     }
 
+    @Override
     public Term clone() {
         Term result = new Term(value);
         lazyInit();
